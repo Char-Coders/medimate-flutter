@@ -191,7 +191,13 @@ class ChatMessage extends StatelessWidget {
         mainAxisAlignment:
             isUserMessage ? MainAxisAlignment.end : MainAxisAlignment.start,
         children: <Widget>[
-          isUserMessage ? SizedBox() : CircleAvatar(child: Icon(Icons.person)),
+          isUserMessage
+              ? SizedBox()
+              : Image.asset(
+                  'assets/icon.png', // Use the image asset
+                  width: 40, // Adjust the width as needed
+                  height: 40, // Adjust the height as needed
+                ),
           Container(
             constraints: BoxConstraints(
               maxWidth: MediaQuery.of(context).size.width * 0.7,
