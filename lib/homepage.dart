@@ -88,26 +88,26 @@ class ChatScreenState extends State<ChatScreen> {
     var image = new Image(image: assetsImage, fit: BoxFit.cover);
     return Scaffold(
       appBar: AppBar(
-        title: Text('MediMate'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8.0),
+              child: image, // Replace 'MediMate' with the image
+              height: 40, // Adjust the height as needed
+              width: 40, // Adjust the width as needed
+            ),
+            const Text(
+              'Health Assistant',
+              style: TextStyle(
+                fontSize: 20,
+              ),
+            ), // Replace 'MediMate' text
+          ],
+        ),
       ),
       body: Column(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Container(
-              child: image,
-              height: 100,
-              width: 100,
-            ),
-          ),
-          Text(
-            'Personalized Health Assistant',
-            style: Theme.of(context)
-                .textTheme
-                .headlineMedium
-                ?.copyWith(fontWeight: FontWeight.w400),
-            textAlign: TextAlign.center,
-          ),
           Expanded(
             child: ListView.builder(
               reverse: true,
